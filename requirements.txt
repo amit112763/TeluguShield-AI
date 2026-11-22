@@ -1,0 +1,13 @@
+streamlit
+torch
+transformers
+captum
+lime
+scikit-learn
+pandas
+matplotlib
+openpyxl
+sentencepiece
+protobuf
+accelerate
+deep-translator
