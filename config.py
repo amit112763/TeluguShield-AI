@@ -5,9 +5,10 @@ BASE_DIR = Path(__file__).resolve().parent
 # ============ MODEL PATHS ============
 MBERT_MODEL_ID = "ramesh070/mbert-hatespeechdetection-telugu"
 
-MURIL_LOCAL_PATH = str(BASE_DIR / "MuRIL_Best_Model" / "Best_Model")
-# TeluguBERT ka asli folder mil jaye tab yahan path daalna
-TELUGUBERT_LOCAL_PATH = str(BASE_DIR / "TeluguBERT_Best_Model")
+# Hugging Face repo IDs (work on laptop and on Streamlit Cloud).
+# If a local folder with the same path exists, app.py uses that instead.
+MURIL_LOCAL_PATH      = "akay1127/telugushield-muril"
+TELUGUBERT_LOCAL_PATH = "akay1127/telugushield-telugubert"
 
 # ============ DATASET ============
 TEST_DATA_PATH = str(BASE_DIR / "telugu_hate_test_final.csv")

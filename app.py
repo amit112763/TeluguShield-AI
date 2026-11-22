@@ -130,12 +130,14 @@ def _resolve_model_dir(path):
 @st.cache_resource(show_spinner=False)
 def _load_one(path, name):
     try:
-        if name == "mBERT":
-            tok = AutoTokenizer.from_pretrained(path)
-            mdl = AutoModelForSequenceClassification.from_pretrained(path)
+        p = str(path).strip().strip('"')
+        if name == "mBERT" or not os.path.exists(p):
+            # Hugging Face repo ID (mBERT, and MuRIL / TeluguBERT on the cloud)
+            tok = AutoTokenizer.from_pretrained(p)
+            mdl = AutoModelForSequenceClassification.from_pretrained(p)
         else:
-            # Local model: pass the FOLDER (never the config.json file) + local_files_only
-            model_dir = _resolve_model_dir(path)
+            # Local folder (laptop): pass the FOLDER (never the config.json file)
+            model_dir = _resolve_model_dir(p)
             tok = AutoTokenizer.from_pretrained(model_dir, local_files_only=True)
             mdl = AutoModelForSequenceClassification.from_pretrained(model_dir, local_files_only=True)
 

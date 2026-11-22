@@ -3,3 +3,6 @@ venv/
 .venv/
 __pycache__/
 *.pyc
+TeluguBERT/
+MuRIL/
+.streamlit/secrets.toml
