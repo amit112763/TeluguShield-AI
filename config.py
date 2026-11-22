@@ -1,12 +1,19 @@
-# ============ MODEL PATHS ============
-MBERT_MODEL_ID   = "ramesh070/mbert-hatespeechdetection-telugu"
+from pathlib import Path
 
-# Laptop aur Cloud dono ke liye relative paths
-MURIL_LOCAL_PATH      = "./Best_Model"
-TELUGUBERT_LOCAL_PATH = "./TeluguBERT_Best_Model" # Agar folder ka naam yahi hai
+# Is file ka folder (repo root) — laptop aur cloud dono pe sahi chalega
+BASE_DIR = Path(__file__).resolve().parent
+
+# ============ MODEL PATHS ============
+MBERT_MODEL_ID = "ramesh070/mbert-hatespeechdetection-telugu"
+
+# MuRIL ki files repo ke root me hain
+MURIL_LOCAL_PATH = str(BASE_DIR)
+
+# TeluguBERT subfolder me hai: TeluguBERT/Best_Model
+TELUGUBERT_LOCAL_PATH = str(BASE_DIR / "TeluguBERT" / "Best_Model")
 
 # ============ DATASET ============
-TEST_DATA_PATH = "./telugu_hate_test_final.csv" 
+TEST_DATA_PATH = str(BASE_DIR / "telugu_hate_test_final.csv")
 TEXT_COLUMN    = "Comments"
 LABEL_COLUMN   = "Final_Label"
 
@@ -20,4 +27,4 @@ IG_STEPS     = 32
 LIME_SAMPLES = 100
 
 # ============ CACHE ============
-EVAL_CACHE_PATH = "./prototype_eval_cache.json"
+EVAL_CACHE_PATH = str(BASE_DIR / "prototype_eval_cache.json")
