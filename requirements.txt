@@ -10,4 +10,4 @@ openpyxl
 sentencepiece
 protobuf
 accelerate
-deep-translator
+sarvamai

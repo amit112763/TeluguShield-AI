@@ -1,9 +1,9 @@
 # ============ MODEL PATHS ============
 MBERT_MODEL_ID   = "ramesh070/mbert-hatespeechdetection-telugu"
 
-# Laptop ke local paths (Dono models ke folders)
-MURIL_LOCAL_PATH = r"C:\Users\amit\Downloads\TS_extract\TeluguShield_AI\05_Hyperparameter_Tuning\MuRIL\Best_Model"
-TELUGUBERT_LOCAL_PATH = r"E:\Telugushield\TeluguBERT\Best_Model"
+# Laptop aur Cloud dono ke liye relative paths
+MURIL_LOCAL_PATH      = "./Best_Model"
+TELUGUBERT_LOCAL_PATH = "./TeluguBERT_Best_Model" # Agar folder ka naam yahi hai
 
 # ============ DATASET ============
 TEST_DATA_PATH = "./telugu_hate_test_final.csv" 
